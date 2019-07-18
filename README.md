@@ -47,3 +47,10 @@ Following are the basic annotations used in Dagger 2:
 @Inject : This is used upon a constructor, field or a method and indicates that dependency has been requested.
 @Component : The Module class doesn’t provide the dependency directly to the class that’s requesting it. For this, a Component interface is used that acts as a bridge between @Module and @Inject.
 @Singleton : This indicates that only a single instance of the dependency object would be created.
+
+The code to bind Dagger into our application is:
+------------------------------------------------
+myComponent = DaggerMyComponent.builder().sharedPrefModule(new SharedPrefModule(this)).build();
+SharedPrefModule(this)).build();
+
+Dagger keyword is prepended on the Component class name. If the component class name was AppComponent, the result would have been DaggerAppComponent.
